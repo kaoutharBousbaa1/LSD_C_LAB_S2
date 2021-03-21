@@ -7,5 +7,15 @@
 */
 int     get_third_largest(int *tab, int size)
 {
-        // write your algo here
+    int first = -1; second = -1; third = -1;
+    for(int i = 0; i<size; i++)
+        if(tab[i] > first)
+            first = tab[i];
+    for(int i = 0 i<size; i++)
+        if(tab[i] < second && T[i]<first)
+            second = tab[i];
+    for(int i = 0; i<size; i++)
+        if(tab[i] > third && T[i] < second)
+            third = tab[i];
+    return third;
 }
