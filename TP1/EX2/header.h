@@ -12,7 +12,8 @@
 #define HEADER
 
 #include <stdio.h>
-#include <stdlib.h> // for rand and srand functions
+#include <stdlib.h>
+#include <time.h>// for rand and srand functions
 
 void    print_table(int *tab, int size);
 void    rand_fill_table(int *tab, int size);
