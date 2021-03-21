@@ -20,7 +20,7 @@ static bool    is_prime_opt(int n)
     return 1;
 }
 
-int get_primes_opt(int n)
+void get_primes_opt(int n)
 {
     if(n>2)
         print(2);
