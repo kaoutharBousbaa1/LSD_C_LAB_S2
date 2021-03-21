@@ -21,7 +21,7 @@ void get_primes(int n)
     for(int i = 2; i<=n; i++)
     {
         if(is_prime_opt(i))
-            print(" %d is prime\n", i);
+            printf(" %d is prime\n", i);
     }
 } 
 
