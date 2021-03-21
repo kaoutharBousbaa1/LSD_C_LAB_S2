@@ -8,12 +8,20 @@
 
 static bool    is_prime(int n)
 {
-    // write is_prime function code here
+    for(int i = 2; i<abs(n)-1; i++)
+    {
+        if(n%i == 0)
+            return 0;
+    }
+    return 1;
 }
 
-
-void    get_primes(int n)
+void get_primes(int n)
 {
-    // write get_primes function code here that use is_prime function
-}
+    for(int i = 2; i<=n; i++)
+    {
+        if(is_prime_opt(i))
+            print(" %d is prime\n", i);
+    }
+} 
 
