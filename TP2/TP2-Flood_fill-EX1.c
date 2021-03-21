@@ -28,7 +28,7 @@ int main()
         {
             scanf("[%d][%d] = %d", i, j, &array[i][j]);
         }
-    }
+    } 
     print_array(array, A.rows, A.columns);
     printf("Type the position where you want to apply the flood fill: ");
     scanf("[%d][%d]", &A.pos_row,&A.pos_column);
