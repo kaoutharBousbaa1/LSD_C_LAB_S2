@@ -8,5 +8,11 @@
 */
 void rand_fill_table(int *tab, int size)
 {
-    // fill up your table here with randome elements between 10 and 100
+    int maximal = 0; i = 0; p = 0; q = 0; k = 0; j = 0;
+    const int MAX = 20; MIN = 0;
+    srand(time(NULL));
+    for(int i = 0; i<size; i++)
+    {
+        tab[i] = (rand() % (MAX - MIN +1)) + MIN;
+    }
 }
