@@ -176,7 +176,7 @@ void menu()
     printf("1.The depth/high of the tree\n");
     printf("2.The diameter of the tree\n");
     printf("3.The sum of leaves values\n");
-    printf("4.Quit\n");
+    printf("4.Quit\n\n");
 }
 int main()
 {
@@ -204,7 +204,7 @@ int main()
                 break;
             case 2:
                 k = diameter_recursive(binary_tree);
-                printf("The diamter of the tree is %d\n", k);
+                printf("The diameter of the tree is %d\n", k);
                 break;
             case 3:
                 k = leaf_sum(binary_tree, k);
