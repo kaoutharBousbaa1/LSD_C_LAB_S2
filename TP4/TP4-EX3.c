@@ -84,12 +84,15 @@ int* convertBST_array(t_node* binaryS_tree, int* array)
     return array;    
 }
 //Create a balanced binary search tree from the sorted array below
-t_node* createBST_from_array(int* array, int k) 
+t_node* createBST_from_array(int* array, int s, int e) 
 {
-    int m = array[k/2];
-    t_node* balanced_BST = create_node(m);
-    balanced_BST->left = createBST_from_array(array, array[k/2]);
-    balanced_BST->right = createBST_from_array(array, array[k/2]);
+    if(s > e)
+        return NULL;
+    int m = (s+e)/2;
+    t_node* balanced_BST = create_node(array[m]);
+    balanced_BST->left = createBST_from_array(array, s, m-1);
+    balanced_BST->right = createBST_from_array(array, m+1, e);
+    return balanced_BST;
 }
 //Print binary search tree(Parcours préfixe):
 void print_BST(t_node* binaryS_tree)
@@ -112,7 +115,7 @@ int main()
     printf("\n\n");
     int* array = (int*)malloc(4*sizeof(int));
     array = convertBST_array(binaryS_tree, array);
-    t_node* tree = createBST_from_array(array, 4);
+    t_node* tree = createBST_from_array(array, 1, 4);
     print_BST(tree);
     printf("\n\n");
     return 0;
