@@ -61,11 +61,11 @@ int count(t_node* head)
     return c;
 }
 //Optimal palindrome function
-int palindrome_check_opt(char string)
+int palindrome_check_opt(char string[])
 {
     int k = sizeof(string);
     int h = 0;
-    if(sizeof(string == 1))
+    if(sizeof(string) == 1))
         return 0;
     for(int i = 0; i < k/2; i++)
     {
