@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 struct s_node
 {
@@ -43,9 +44,9 @@ t_node* stringTo_list(char string[], t_node* headlist)
     int i = 1;
     do
     {
-        headlist = addnode(string[i]);
+        headlist = addnode(headlist, string[i]);
         i++;
-    } while(i < string.size());
+    } while(i < sizeof(*string));
     return headlist;
 }
 //Count the elements of the linked list
@@ -63,13 +64,13 @@ int count(t_node* head)
 //Optimal palindrome function
 int palindrome_check_opt(char string[])
 {
-    int k = sizeof(string);
+    int k = strlen(string);
     int h = 0;
-    if(sizeof(string) == 1))
+    if(strlen(string) == 1)
         return 0;
     for(int i = 0; i < k/2; i++)
     {
-        if(string[h+i] != string[k-i])
+        if(string[h+i] != string[k-1-i])
             return 1;
     }
     return 0;
@@ -82,6 +83,10 @@ int main(int argc, char* argv[])
     {
         printf("The string argument is: %s\n", argv[1]); 
         int k = palindrome_check_opt(argv[1]);
+        if(palindrome_check_opt(argv[1]) == 0)
+            printf("The string you entered is a palindrome.\n ");
+        else
+            printf("The string you entered is not a palindrome.\n");
     }
     return 0;
 }
